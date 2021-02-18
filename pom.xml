@@ -46,6 +46,12 @@
                 <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
                 <version>${shardingsphere.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.12</version>
+                <scope>provided</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
