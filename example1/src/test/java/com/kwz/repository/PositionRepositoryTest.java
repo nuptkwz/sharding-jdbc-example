@@ -31,4 +31,17 @@ public class PositionRepositoryTest {
             positionRepository.save(position);
         }
     }
+
+    @Test
+    public void testInnerId() {
+        for (int i = 0; i < 100; i++) {
+            Position position = new Position();
+            position.setName("position" + i);
+            position.setCity("beijing");
+            position.setSalary("20w");
+            positionRepository.save(position);
+        }
+    }
+
+
 }
