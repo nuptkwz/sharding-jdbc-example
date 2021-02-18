@@ -1,6 +1,7 @@
 package com.kwz.repository;
 
 import com.kwz.entity.Position;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * Description
