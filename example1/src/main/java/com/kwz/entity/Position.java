@@ -1,5 +1,7 @@
 package com.kwz.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -10,11 +12,12 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "position")
+@Data
 public class Position implements Serializable {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "name")
     private String name;
