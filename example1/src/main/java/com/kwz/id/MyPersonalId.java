@@ -14,10 +14,12 @@ import java.util.Properties;
 @Slf4j
 public class MyPersonalId implements ShardingKeyGenerator {
 
+    private SnowflakeShardingKeyGenerator snowflake = new SnowflakeShardingKeyGenerator();
+
     @Override
     public Comparable<?> generateKey() {
         log.info("-----------执行了自定义的主键生成器-----------");
-        return new SnowflakeShardingKeyGenerator().generateKey();
+        return snowflake.generateKey();
     }
 
     @Override
