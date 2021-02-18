@@ -2,11 +2,14 @@ package com.kwz.repository;
 
 import com.kwz.AppApplication;
 import com.kwz.entity.Position;
+import com.kwz.entity.PositionDetail;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import javax.annotation.Resource;
 
 /**
  * Description
@@ -17,8 +20,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(classes = AppApplication.class)
 public class PositionRepositoryTest {
 
-    @Autowired
+    @Resource
     private PositionRepository positionRepository;
+
+    @Resource
+    private PositionDetailRepository positionDetailRepository;
 
     @Test
     public void testAdd() {
@@ -40,6 +46,11 @@ public class PositionRepositoryTest {
             position.setCity("beijing");
             position.setSalary("20w");
             positionRepository.save(position);
+
+            PositionDetail positionDetail = new PositionDetail();
+            positionDetail.setPId(position.getId());
+            positionDetail.setDescription("this is position detail description");
+            positionDetailRepository.save(positionDetail);
         }
     }
 
